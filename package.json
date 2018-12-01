@@ -1,0 +1,51 @@
+{
+  "name": "wfilesencoders",
+  "version": "0.3.43",
+  "engine": "node >= 6.0.0",
+  "description": "Collection of files transformers for Files module. Use it to read configs in different formats.",
+  "license": "MIT",
+  "author": "Kostiantyn Wandalen <wanalen@willbe.so>",
+  "contributors": [
+    {
+      "name": "Kostiantyn Wandalen",
+      "email": "wanalen@willbe.so"
+    }
+  ],
+  "main": "proto/dwtools/amid/files/l1/EncodersExtended.s",
+  "files": [
+    "proto/dwtools/amid/files",
+    "proto/dwtools/Tools.s",
+    "production"
+  ],
+  "scripts": {
+    "test": "wtest staging",
+    "docgen": "wdocgen proto"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Wandalen/wFilesEncoders.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Wandalen/wFilesEncoders/issues"
+  },
+  "dependencies": {
+    "wTools": "",
+    "wFiles": "",
+    "coffee-script": "",
+    "js2coffee": "",
+    "js-yaml": ""
+  },
+  "devDependencies": {
+    "wTesting": "",
+    "wfilesencoders": "."
+  },
+  "keywords": [
+    "wTools",
+    "wFiles",
+    "wFilesEncoders",
+    "Files transformers",
+    "file",
+    "read file",
+    "write file"
+  ]
+}
