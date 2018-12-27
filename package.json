@@ -36,8 +36,7 @@
     "js-yaml": ""
   },
   "devDependencies": {
-    "wTesting": "",
-    "wfilesencoders": "."
+    "wTesting": ""
   },
   "keywords": [
     "wTools",
