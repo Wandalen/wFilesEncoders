@@ -3,7 +3,8 @@
 'use strict';
 
 /**
-  @module Tools/mid/files/FilesTransformers - Collection of files transformers for Files module. Use it to read configs in different formats.
+ * Collection of files transformers for Files module. Use it to read configs in different formats.
+  @module Tools/mid/files/FilesTransformers
 */
 
 /**
