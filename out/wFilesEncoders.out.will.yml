@@ -52,13 +52,10 @@ path:
       - .
       - ./dwtools
       - ./dwtools/Tools.s
-      - ./dwtools/abase
       - ./dwtools/amid
       - ./dwtools/amid/files
       - ./dwtools/amid/files/l1
       - ./dwtools/amid/files/l1/EncodersExtended.s
-      - ./dwtools/amid/files.test
-      - ./dwtools/atop
     criterion:
       default: 1
       debug: 1
@@ -85,6 +82,8 @@ reflector:
     filePath:
       ./proto: ./out.release
     srcFilter:
+      filePath:
+        ./proto: ./out.release
       maskAll:
         excludeAny:
           - !<tag:yaml.org,2002:js/regexp> /(\W|^)node_modules(\W|$)/
@@ -108,6 +107,8 @@ reflector:
     filePath:
       ./proto: ./out.debug
     srcFilter:
+      filePath:
+        ./proto: ./out.debug
       maskAll:
         excludeAny:
           - !<tag:yaml.org,2002:js/regexp> /(\W|^)node_modules(\W|$)/
@@ -147,6 +148,7 @@ reflector:
   exported.0:
     filePath: ./proto
     srcFilter:
+      filePath: ./proto
       prefixPath: .
     dstFilter:
       prefixPath: .
@@ -156,6 +158,9 @@ reflector:
       ./dwtools/Tools.s: true
       ./dwtools/amid/files/l1/EncodersExtended.s: true
     srcFilter:
+      filePath:
+        ./dwtools/Tools.s: true
+        ./dwtools/amid/files/l1/EncodersExtended.s: true
       basePath: .
       prefixPath: proto
     dstFilter:
