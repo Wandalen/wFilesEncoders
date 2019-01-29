@@ -88,7 +88,10 @@ writeCoffee =
     _.assert( e.operation.encoding === 'coffee' || e.operation.encoding === 'cson' );
     try
     {
-      e.operation.data = Js2coffee( JSON.stringify( e.operation.data ) );
+      let data = _.toStr( e.operation.data, { jsLike : 1, keyWrapper : '' } );
+      if( _.mapIs( e.operation.data ) )
+      data = '(' + data + ')';
+      e.operation.data = Js2coffee( data );
     }
     catch( err )
     {
