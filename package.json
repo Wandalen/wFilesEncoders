@@ -33,7 +33,8 @@
     "wFiles": "",
     "coffee-script": "",
     "js2coffee": "",
-    "js-yaml": ""
+    "js-yaml": "",
+    "bson": ""
   },
   "devDependencies": {
     "wTesting": ""

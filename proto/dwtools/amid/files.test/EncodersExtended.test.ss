@@ -187,6 +187,35 @@ a1: 1
 
 }
 
+//
+
+function readWriteBson( test )
+{
+  let self = this;
+  let provider = self.provider;
+  let path = provider.path;
+  let testPath = self.pathFor( 'written/' + test.name );
+  let testFilePath = path.join( testPath, 'config' );
+
+  let src =
+  {
+    string: 'string',
+    number: 1.123,
+    bool: false,
+    array: [ 1, '1', true ],
+    regexp: /\.string$/,
+    map: { a: 'string', b: 1, c: false },
+  }
+
+  /**/
+
+  test.case = 'write and read yaml file, using map as data';
+  provider.filesDelete( testPath );
+  provider.fileWrite({ filePath : testFilePath, data : src, encoding : 'bson' });
+  var got = provider.fileRead({ filePath : testFilePath, encoding : 'bson' });
+  test.identical( got, src );
+}
+
 // --
 // declare
 // --
@@ -210,7 +239,8 @@ var Self =
   tests :
   {
     readWriteCson,
-    readWriteYaml
+    readWriteYaml,
+    readWriteBson
   },
 
 }
