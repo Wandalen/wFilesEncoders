@@ -169,6 +169,67 @@ writeYml =
 
 }
 
+//
+
+let Bson;
+try
+{
+  Bson = require( 'bson' );
+}
+catch( err )
+{
+}
+
+let readBson = null;
+if( Bson )
+readBson =
+{
+
+  forInterpreter : 1,
+
+  onBegin : function( e )
+  {
+    _.assert( e.operation.encoding === 'bson' );
+    e.operation.encoding = 'buffer.node';
+  },
+
+  onEnd : function( e )
+  {
+    _.assert( _.bufferNodeIs( e.data ), '( fileRead.ReadEncoders.Bson.onEnd ) expects node buffer' );
+    try
+    {
+      e.data = Bson.deserialize( e.data );
+    }
+    catch( err )
+    {
+      debugger;
+      throw _.err( err );
+    }
+  },
+
+}
+
+let writeBson = null;
+if( Bson )
+writeBson =
+{
+  onBegin : function( e )
+  {
+    _.assert( e.operation.encoding === 'bson' );
+    try
+    {
+      e.operation.data = Bson.serialize( e.operation.data );
+    }
+    catch( err )
+    {
+      debugger;
+      throw _.err( err );
+    }
+    e.operation.encoding = 'buffer.node';
+  },
+
+}
+
 // --
 // declare
 // --
@@ -180,6 +241,7 @@ let FileReadEncoders =
   'yml' : readYml,
   'coffee' : readCoffee,
   'cson' : readCoffee,
+  'bson' : readBson,
 
 }
 
@@ -190,6 +252,7 @@ let FileWriteEncoders =
   'yml' : writeYml,
   'coffee' : writeCoffee,
   'cson' : writeCoffee,
+  'bson' : writeBson,
 
 }
 
