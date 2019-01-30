@@ -58,6 +58,7 @@ path:
       - ./dwtools/amid/files/l1
       - ./dwtools/amid/files/l1/EncodersExtended.s
       - ./dwtools/amid/files.test
+      - ./dwtools/amid/files.test/EncodersExtended.test.ss
       - ./dwtools/atop
     criterion:
       default: 1
@@ -71,6 +72,7 @@ path:
     path:
       - ./dwtools/Tools.s
       - ./dwtools/amid/files/l1/EncodersExtended.s
+      - ./dwtools/amid/files.test/EncodersExtended.test.ss
     criterion:
       default: 1
       debug: 1
@@ -152,10 +154,12 @@ reflector:
     filePath:
       ./dwtools/Tools.s: true
       ./dwtools/amid/files/l1/EncodersExtended.s: true
+      ./dwtools/amid/files.test/EncodersExtended.test.ss: true
     srcFilter:
       filePath:
         ./dwtools/Tools.s: true
         ./dwtools/amid/files/l1/EncodersExtended.s: true
+        ./dwtools/amid/files.test/EncodersExtended.test.ss: true
       basePath: .
       prefixPath: proto
 step:
@@ -295,6 +299,7 @@ exported:
       path:
         - ./dwtools/Tools.s
         - ./dwtools/amid/files/l1/EncodersExtended.s
+        - ./dwtools/amid/files.test/EncodersExtended.test.ss
       criterion:
         default: 1
         debug: 1
