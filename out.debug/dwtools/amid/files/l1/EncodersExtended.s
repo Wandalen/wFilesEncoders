@@ -208,14 +208,6 @@ _.assert( _.prototypeOf( _.FileWriteEncoders, _.FileProvider.Partial.prototype.f
 // export
 // --
 
-// let Self = wTools.FileTransformers =  wTools.FileTransformers || Object.create( null )
-//
-// Object.assign( Self, ReadEncoders );
-//
-// if( typeof module !== 'undefined' )
-// if( _global_.WTOOLS_PRIVATE )
-// { /* delete require.cache[ module.id ]; */ }
-
 if( typeof module !== 'undefined' && module !== null )
 module[ 'exports' ] = Self;
 
