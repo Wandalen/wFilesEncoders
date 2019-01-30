@@ -216,6 +216,125 @@ function readWriteBson( test )
   test.identical( got, src );
 }
 
+//
+
+function perfomance( test )
+{
+  let self = this;
+
+  let Yaml = require( 'js-yaml' );
+  let Bson = require( 'bson' );
+  let Coffee = require( 'coffee-script' );
+  let Js2coffee = require( 'js2coffee' );
+
+  let readResults = [];
+  let writeResults = [];
+  let times = 10000;
+
+  /**/
+
+  let src =
+  {
+    string: 'string',
+    number: 1.1234567,
+    bool: false,
+    array: [ 1, '1', true ],
+    date : new Date(),
+    regexp: /\.string$/,
+    map: { a: 'string', b: 1, c: false },
+    buffer : Buffer.alloc( 100 )
+  }
+
+
+  /* bson */
+
+  var timeNow = _.timeNow();
+  var serialized;
+  for( var i = 0; i < times; i++ )
+  {
+    serialized = Bson.serialize( src );
+  }
+  let bsonWriteTime = _.timeSpent( timeNow );
+  writeResults.push([ 'bson', bsonWriteTime, times ]);
+
+  var timeNow = _.timeNow();
+  var deserialized;
+  for( var i = 0; i < times; i++ )
+  {
+    deserialized = Bson.deserialize( serialized );
+  }
+  let bsonReadTime = _.timeSpent( timeNow );
+  readResults.push([ 'bson', bsonReadTime, times  ]);
+
+  /* cson */
+
+  var timeNow = _.timeNow();
+  var serialized;
+  for( var i = 0; i < times; i++ )
+  {
+    let data = _.toStr( src, { jsLike : 1, keyWrapper : '' } );
+    data = '(' + data + ')';
+    serialized = Js2coffee( data );
+  }
+  let csonWriteTime = _.timeSpent( timeNow );
+  writeResults.push([ 'cson', csonWriteTime, times ]);
+
+  var timeNow = _.timeNow();
+  var deserialized;
+  for( var i = 0; i < times; i++ )
+  {
+    deserialized = Coffee.eval( serialized )
+  }
+  let csonReadTime = _.timeSpent( timeNow );
+  readResults.push([ 'cson', csonReadTime, times ]);
+
+  /* Yaml */
+
+  var timeNow = _.timeNow();
+  var serialized;
+  for( var i = 0; i < times; i++ )
+  {
+    serialized = Yaml.dump( src );
+  }
+  let yamlWriteTime = _.timeSpent( timeNow );
+  writeResults.push([ 'yaml', yamlWriteTime, times  ]);
+
+  var timeNow = _.timeNow();
+  var deserialized;
+  for( var i = 0; i < times; i++ )
+  {
+    deserialized = Yaml.load( serialized )
+  }
+  let yamlReadTime = _.timeSpent( timeNow );
+  readResults.push([ 'yaml', yamlReadTime, times  ]);
+
+  /* read results( deserialization ) */
+
+  var o =
+  {
+    data : readResults,
+    head : [ 'read encoder', 'time', 'number of runs' ],
+    colWidth : 15
+  }
+
+  var output = _.strTable( o );
+  console.log( output );
+
+  /* write results( serialization ) */
+
+  var o =
+  {
+    data : writeResults,
+    head : [ 'write encoder', 'time', 'number of runs' ],
+    colWidth : 15
+  }
+
+  var output = _.strTable( o );
+  console.log( output );
+
+
+}
+
 // --
 // declare
 // --
@@ -240,7 +359,8 @@ var Self =
   {
     readWriteCson,
     readWriteYaml,
-    readWriteBson
+    readWriteBson,
+    perfomance
   },
 
 }

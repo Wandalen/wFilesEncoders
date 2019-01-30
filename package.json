@@ -37,7 +37,8 @@
     "bson": ""
   },
   "devDependencies": {
-    "wTesting": ""
+    "wTesting": "",
+    "cli-table2": ""
   },
   "keywords": [
     "wTools",
