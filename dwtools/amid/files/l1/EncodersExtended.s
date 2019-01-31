@@ -48,7 +48,7 @@ readCoffee =
 {
 
   exts : [ 'coffee' ],
-  forInterpreter : 1,
+  forConfig : 1,
 
   onBegin : function( e )
   {
@@ -121,7 +121,7 @@ readYml =
 {
 
   exts : [ 'yaml','yml' ],
-  forInterpreter : 1,
+  forConfig : 1,
 
   onBegin : function( e )
   {
@@ -185,7 +185,7 @@ if( Bson )
 readBson =
 {
 
-  forInterpreter : 1,
+  forConfig : 1,
 
   onBegin : function( e )
   {
