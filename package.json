@@ -31,6 +31,7 @@
   "dependencies": {
     "wTools": "",
     "wFiles": "",
+    "wgdfstrategy": "",
     "coffee-script": "",
     "js2coffee": "",
     "js-yaml": "",
