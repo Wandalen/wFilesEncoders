@@ -240,9 +240,7 @@ function perfomance( test )
     bool: false,
     array: [ 1, '1', true ],
     date : new Date(),
-    regexp: /\.string$/,
     map: { a: 'string', b: 1, c: false },
-    buffer : Buffer.alloc( 100 )
   }
 
 
@@ -307,6 +305,60 @@ function perfomance( test )
   }
   let yamlReadTime = _.timeSpent( timeNow );
   readResults.push([ 'yaml', yamlReadTime, times  ]);
+
+  /* json.fine */
+
+  var timeNow = _.timeNow();
+  var serialized;
+  for( var i = 0; i < times; i++ )
+  {
+    serialized = _.cloneData({ src : src });
+    serialized = _.toJson( serialized, { cloning : 0 } );
+  }
+  let jsonFineWriteTime = _.timeSpent( timeNow );
+  writeResults.push([ 'json.fine', jsonFineWriteTime, times  ]);
+
+  /* json */
+
+  var timeNow = _.timeNow();
+  var deserialized;
+  for( var i = 0; i < times; i++ )
+  {
+    deserialized = _.jsonParse( serialized );
+  }
+  let jsonReadTime = _.timeSpent( timeNow );
+  readResults.push([ 'json', jsonReadTime, times  ]);
+
+  /* json.min */
+
+  var timeNow = _.timeNow();
+  var serialized;
+  for( var i = 0; i < times; i++ )
+  {
+    serialized = JSON.stringify( src );
+  }
+  let jsonMinWriteTime = _.timeSpent( timeNow );
+  writeResults.push([ 'json.min', jsonMinWriteTime, times  ]);
+
+  /* js.structure */
+
+  var timeNow = _.timeNow();
+  var serialized;
+  for( var i = 0; i < times; i++ )
+  {
+    serialized = _.toJs( src );
+  }
+  let jsStructureWriteTime = _.timeSpent( timeNow );
+  writeResults.push([ 'js.structure', jsStructureWriteTime, times  ]);
+
+  var timeNow = _.timeNow();
+  var deserialized;
+  for( var i = 0; i < times; i++ )
+  {
+    deserialized = _.exec({ code : serialized, prependingReturn : 1 });
+  }
+  let jsStructureReadTime = _.timeSpent( timeNow );
+  readResults.push([ 'js.structure', jsStructureReadTime, times  ]);
 
   /* read results( deserialization ) */
 
