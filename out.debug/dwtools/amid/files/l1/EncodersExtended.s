@@ -73,8 +73,6 @@ catch( err )
 {
 }
 
-/* qqq : does not work, find solution, use cson probably */
-
 let writeCoffee = null;
 if( Js2coffee )
 writeCoffee =
