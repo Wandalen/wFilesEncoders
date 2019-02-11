@@ -4,7 +4,7 @@ about :
 
   name : "wFilesEncoders"
   description : "Collection of files transformers for Files module. Use it to read configs in different formats."
-  version : "0.3.56"
+  version : "0.3.57"
   enabled : 1
   interpreters :
   - nodejs >= 6.0.0
