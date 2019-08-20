@@ -3,33 +3,33 @@ submodule :
 
   wTools :
     path : npm:///wTools
-    enabled : 0
+    enabled : 0 # submodule
   wFiles :
     path : npm:///wFiles
-    enabled : 0
-  wgdfstrategy :
+    enabled : 0 # submodule
+  wGdfStrategy :
     path : npm:///wgdfstrategy
-    enabled : 0
+    enabled : 0 # submodule
   coffee-script :
     path : npm:///coffee-script
-    enabled : 0
+    enabled : 0 # submodule
   js2coffee :
     path : npm:///js2coffee
-    enabled : 0
+    enabled : 0 # submodule
   js-yaml :
     path : npm:///js-yaml
-    enabled : 0
+    enabled : 0 # submodule
   bson :
     path : npm:///bson
-    enabled : 0
+    enabled : 0 # submodule
   wfilesencoders :
     path : hd://.
-    enabled : 0
+    enabled : 0 # submodule
     criterion :
       development : 1
   wTesting :
     path : npm:///wTesting
-    enabled : 0
+    enabled : 0 # submodule
     criterion :
       development : 1
 
