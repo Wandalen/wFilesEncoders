@@ -224,7 +224,7 @@ function perfomance( test )
 
   let Yaml = require( 'js-yaml' );
   let Bson = require( 'bson' );
-  let Coffee = require( 'coffee-script' );
+  let Coffee = require( 'coffeescript' );
   let Js2coffee = require( 'js2coffee' );
 
   let readResults = [];

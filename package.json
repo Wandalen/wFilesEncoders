@@ -15,7 +15,7 @@
   "files": [
     "proto/dwtools/amid/files",
     "proto/dwtools/Tools.s",
-    "production"
+    "out"
   ],
   "scripts": {
     "test": "wtest .run proto/**",
@@ -32,7 +32,7 @@
     "wTools": "",
     "wFiles": "",
     "wgdfstrategy": "",
-    "coffee-script": "",
+    "coffeescript": "",
     "js2coffee": "",
     "js-yaml": "",
     "bson": ""

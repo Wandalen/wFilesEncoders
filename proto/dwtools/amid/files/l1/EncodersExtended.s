@@ -36,7 +36,7 @@ let Self = _global_.wTools;
 let Coffee;
 try
 {
-  Coffee = require( 'coffee-script' );
+  Coffee = require( 'coffeescript' );
 }
 catch( err )
 {
