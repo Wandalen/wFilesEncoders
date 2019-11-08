@@ -3,18 +3,19 @@ root:
   - wFilesEncoders.out
 consistency:
   wFilesEncoders.out.will.yml: &ref_0
-    hash: e113425e52b70b872a7a72669028a1b0
-    size: 39488
+    hash: 65af2c52b4a3bb98c10c09181ddc66b3
+    size: 39517
   ../.ex.will.yml: &ref_1
     hash: 345fe5baa1b6f0c87e053a95a6aeabcb
     size: 1867
   ../.im.will.yml: &ref_2
-    hash: fb9cf3ca984ef74aeab6b55b95105c03
-    size: 5307
+    hash: 91221b55f668b3192f16bd5447b03dda
+    size: 5381
 module:
   wFilesEncoders.out:
     about:
       name: wFilesEncoders
+      org: noorg
       description: >-
         Collection of files transformers for Files module. Use it to read
         configs in different formats.
@@ -68,9 +69,6 @@ module:
       download:
         criterion:
           predefined: 1
-      remote:
-        criterion:
-          predefined: 1
       repository:
         path: 'git+https:///github.com/Wandalen/wFilesEncoders.git'
       origins:
@@ -80,15 +78,15 @@ module:
       bugtracker:
         path: 'https:///github.com/Wandalen/wFilesEncoders/issues'
       in:
-        criterion:
-          predefined: 0
         path: .
       out:
-        criterion:
-          predefined: 0
         path: .
       temp:
-        path: 'path::out'
+        path:
+          - 'path::out'
+          - ../package-lock.json
+          - ../package.json
+          - ../node_modules
       proto:
         path: ../proto
       export:
@@ -153,11 +151,13 @@ module:
         path: '{path::out.*=}/source/Index.s'
       exported.dir.proto.export:
         criterion:
+          generated: 1
           content: proto
           export: 1
         path: ../proto
       exported.files.proto.export:
         criterion:
+          generated: 1
           content: proto
           export: 1
         path:
@@ -361,6 +361,7 @@ module:
           prefixPath: ../proto
         mandatory: 1
         criterion:
+          generated: 1
           content: proto
           export: 1
       exported.files.proto.export:
@@ -373,6 +374,7 @@ module:
         recursive: 0
         mandatory: 1
         criterion:
+          generated: 1
           content: proto
           export: 1
     step:
@@ -730,6 +732,7 @@ module:
         opts:
           reflector: 'reflector::exported.proto.export*'
         criterion:
+          generated: 1
           content: proto
           export: 1
         inherit:
@@ -738,6 +741,7 @@ module:
         opts:
           reflector: 'reflector::exported.files.proto.export*'
         criterion:
+          generated: 1
           content: proto
           export: 1
         inherit:
@@ -836,6 +840,7 @@ module:
   ../:
     about:
       name: wFilesEncoders
+      org: noorg
       description: >-
         Collection of files transformers for Files module. Use it to read
         configs in different formats.
@@ -889,9 +894,6 @@ module:
       download:
         criterion:
           predefined: 1
-      remote:
-        criterion:
-          predefined: 1
       repository:
         path: 'git+https:///github.com/Wandalen/wFilesEncoders.git'
       origins:
@@ -901,21 +903,21 @@ module:
       bugtracker:
         path: 'https:///github.com/Wandalen/wFilesEncoders/issues'
       in:
-        criterion:
-          predefined: 0
         path: .
       out:
-        criterion:
-          predefined: 0
         path: out
       temp:
-        path: 'path::out'
+        path:
+          - 'path::out'
+          - package-lock.json
+          - package.json
+          - node_modules
       proto:
-        path: ./proto
+        path: proto
       export:
         path: '{path::proto}/**'
       doc:
-        path: ./doc
+        path: doc
       out.raw.debug:
         criterion:
           debug: debug
@@ -1557,6 +1559,6 @@ module:
         hash: 345fe5baa1b6f0c87e053a95a6aeabcb
         size: 1867
       ../.im.will.yml:
-        hash: fb9cf3ca984ef74aeab6b55b95105c03
-        size: 5307
+        hash: 91221b55f668b3192f16bd5447b03dda
+        size: 5381
       wFilesEncoders.out.will.yml: *ref_0

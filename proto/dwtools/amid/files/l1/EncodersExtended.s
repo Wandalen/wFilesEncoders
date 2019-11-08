@@ -123,7 +123,7 @@ readYml =
 
   onBegin : function( e )
   {
-    _.assert( _.arrayHas( [ 'yaml', 'yml' ], e.operation.encoding ) );
+    _.assert( _.longHas( [ 'yaml', 'yml' ], e.operation.encoding ) );
     e.operation.encoding = 'utf8';
   },
 
@@ -152,7 +152,7 @@ writeYml =
 
   onBegin : function( e )
   {
-    _.assert( _.arrayHas( [ 'yaml', 'yml' ], e.operation.encoding ) );
+    _.assert( _.longHas( [ 'yaml', 'yml' ], e.operation.encoding ) );
     try
     {
       e.operation.data = Yaml.dump( e.operation.data );
