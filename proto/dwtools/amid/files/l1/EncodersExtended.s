@@ -258,10 +258,8 @@ let FileWriteEncoders =
 _.FileReadEncoders = _.FileReadEncoders || Object.create( null );
 _.FileWriteEncoders = _.FileWriteEncoders || Object.create( null );
 
-debugger;
 Object.assign( _.FileReadEncoders, FileReadEncoders );
 Object.assign( _.FileWriteEncoders, FileWriteEncoders );
-debugger;
 
 if( _.FileProvider && _.FileProvider.Partial && _.FileProvider.Partial.prototype.fileRead.encoders )
 _.assert( _.isPrototypeOf( _.FileReadEncoders, _.FileProvider.Partial.prototype.fileRead.encoders ) );
