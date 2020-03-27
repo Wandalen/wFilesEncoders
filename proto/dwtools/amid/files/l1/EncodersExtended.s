@@ -17,7 +17,7 @@ return;
 if( typeof module !== 'undefined' )
 {
 
-  let _ = require( '../../../Tools.s' );
+  let _ = require( '../../../../dwtools/Tools.s' );
   _.include( 'wFiles' );
 
 }
