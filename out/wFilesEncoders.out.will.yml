@@ -2,10 +2,13 @@ format: outwillfile-2.0
 root:
   - wFilesEncoders.out
 consistency:
-  ../.ex.will.yml: &ref_0
+  wFilesEncoders.out.will.yml: &ref_0
+    hash: 65af2c52b4a3bb98c10c09181ddc66b3
+    size: 39517
+  ../.ex.will.yml: &ref_1
     hash: 345fe5baa1b6f0c87e053a95a6aeabcb
     size: 1867
-  ../.im.will.yml: &ref_1
+  ../.im.will.yml: &ref_2
     hash: 91221b55f668b3192f16bd5447b03dda
     size: 5381
 module:
@@ -18,11 +21,11 @@ module:
         configs in different formats.
       enabled: 1
       version: 0.4.0
-      interpreters: &ref_2
+      interpreters:
         - njs >= 8.0.0
         - chrome >= 60.0.0
         - firefox >= 60.0.0
-      keywords: &ref_3
+      keywords:
         - wTools
         - wFiles
         - wFilesEncoders
@@ -32,10 +35,10 @@ module:
         - write file
       license: MIT
       author: Kostiantyn Wandalen <wanalen@willbe.so>
-      contributors: &ref_4
+      contributors:
         - Kostiantyn Wandalen <wanalen@willbe.so>
       npm.name: wfilesencoders
-      npm.scripts: &ref_5
+      npm.scripts:
         test: wtest .run proto/**
         docgen: wdocgen .build proto
     path:
@@ -725,6 +728,24 @@ module:
           content: prime
         inherit:
           - files.transpile
+      exported.proto.export:
+        opts:
+          reflector: 'reflector::exported.proto.export*'
+        criterion:
+          generated: 1
+          content: proto
+          export: 1
+        inherit:
+          - files.reflect
+      exported.files.proto.export:
+        opts:
+          reflector: 'reflector::exported.files.proto.export*'
+        criterion:
+          generated: 1
+          content: proto
+          export: 1
+        inherit:
+          - files.reflect
     build:
       proto.export:
         steps:
@@ -813,8 +834,9 @@ module:
           content: proto
           export: 1
     consistency:
-      ../.ex.will.yml: *ref_0
-      ../.im.will.yml: *ref_1
+      wFilesEncoders.out.will.yml: *ref_0
+      ../.ex.will.yml: *ref_1
+      ../.im.will.yml: *ref_2
   ../:
     about:
       name: wFilesEncoders
@@ -824,13 +846,26 @@ module:
         configs in different formats.
       enabled: 1
       version: 0.4.0
-      interpreters: *ref_2
-      keywords: *ref_3
+      interpreters:
+        - njs >= 8.0.0
+        - chrome >= 60.0.0
+        - firefox >= 60.0.0
+      keywords:
+        - wTools
+        - wFiles
+        - wFilesEncoders
+        - Files transformers
+        - file
+        - read file
+        - write file
       license: MIT
       author: Kostiantyn Wandalen <wanalen@willbe.so>
-      contributors: *ref_4
+      contributors:
+        - Kostiantyn Wandalen <wanalen@willbe.so>
       npm.name: wfilesencoders
-      npm.scripts: *ref_5
+      npm.scripts:
+        test: wtest .run proto/**
+        docgen: wdocgen .build proto
     path:
       module.willfiles:
         criterion:
@@ -1526,3 +1561,6 @@ module:
       ../.im.will.yml:
         hash: 91221b55f668b3192f16bd5447b03dda
         size: 5381
+      wFilesEncoders.out.will.yml:
+        hash: 65af2c52b4a3bb98c10c09181ddc66b3
+        size: 39517
