@@ -1,36 +1,36 @@
 {
-  "name" : "wfilesencoders", 
-  "version" : "0.3.170", 
-  "engine" : "node >= 8.0.0", 
-  "description" : "Collection of files transformers for Files module. Use it to read configs in different formats.", 
-  "license" : "MIT", 
-  "author" : "Kostiantyn Wandalen <wanalen@willbe.so>", 
-  "contributors" : 
+  "name" : "wfilesencoders",
+  "version" : "0.3.171",
+  "engine" : "node >= 8.0.0",
+  "description" : "Collection of files transformers for Files module. Use it to read configs in different formats.",
+  "license" : "MIT",
+  "author" : "Kostiantyn Wandalen <wanalen@willbe.so>",
+  "contributors" :
   [
     { "name" : "Kostiantyn Wandalen", "email" : "wanalen@willbe.so" }
-  ], 
-  "main" : "proto/dwtools/amid/files/l1/EncodersExtended.s", 
-  "files" : [ "proto/dwtools/amid/files", "proto/dwtools/Tools.s", "out" ], 
-  "scripts" : { "test" : "wtest .run proto/**", "docgen" : "wdocgen proto" }, 
-  "repository" : 
+  ],
+  "main" : "proto/dwtools/amid/files/l1/EncodersExtended.s",
+  "files" : [ "proto/dwtools/amid/files", "proto/dwtools/Tools.s", "out" ],
+  "scripts" : { "test" : "wtest .run proto/**", "docgen" : "wdocgen proto" },
+  "repository" :
   {
-    "type" : "git", 
+    "type" : "git",
     "url" : "https://github.com/Wandalen/wFilesEncoders.git"
-  }, 
-  "bugs" : 
+  },
+  "bugs" :
   {
     "url" : "https://github.com/Wandalen/wFilesEncoders/issues"
-  }, 
-  "dependencies" : 
+  },
+  "dependencies" :
   {
-    "wTools" : "alpha", 
-    "wFiles" : "alpha", 
-    "wgdfstrategy" : "alpha", 
-    "coffeescript" : "2.5.1", 
-    "js2coffee" : "2.2.0", 
-    "js-yaml" : "3.13.1", 
+    "wTools" : "gamma",
+    "wFiles" : "gamma",
+    "wgdfstrategy" : "gamma",
+    "coffeescript" : "2.5.1",
+    "js2coffee" : "2.2.0",
+    "js-yaml" : "3.13.1",
     "bson" : "4.0.4"
-  }, 
-  "devDependencies" : { "wTesting" : "alpha", "cli-table2" : "0.2.0" }, 
+  },
+  "devDependencies" : { "wTesting" : "gamma", "cli-table2" : "0.2.0" },
   "keywords" : [ "wTools", "wFiles", "wFilesEncoders", "Files transformers", "file", "read file", "write file" ]
 }
