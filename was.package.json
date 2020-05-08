@@ -4,10 +4,10 @@
   "engine" : "node >= 8.0.0",
   "description" : "Collection of files transformers for Files module. Use it to read configs in different formats.",
   "license" : "MIT",
-  "author" : "Kostiantyn Wandalen <wanalen@willbe.so>",
+  "author" : "Kostiantyn Wandalen <wanalen@01.school>",
   "contributors" :
   [
-    { "name" : "Kostiantyn Wandalen", "email" : "wanalen@willbe.so" }
+    { "name" : "Kostiantyn Wandalen", "email" : "wanalen@01.school" }
   ],
   "main" : "proto/dwtools/amid/files/l1/EncodersExtended.s",
   "files" : [ "proto/dwtools/amid/files", "proto/dwtools/Tools.s", "out" ],
