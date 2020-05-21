@@ -271,7 +271,7 @@ _.assert( _.isPrototypeOf( _.FileWriteEncoders, _.FileProvider.Partial.prototype
 // export
 // --
 
-if( typeof module !== 'undefined' && module !== null )
+if( typeof module !== 'undefined' )
 module[ 'exports' ] = Self;
 
 })();
