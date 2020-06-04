@@ -8,7 +8,7 @@ submodule :
     path : npm:///wFiles
     enabled : 0 # submodule
   wGdfStrategy :
-    path : npm:///wgdfstrategy
+    path : npm:///wgdf
     enabled : 0 # submodule
   coffee-script :
     path : npm:///coffee-script
