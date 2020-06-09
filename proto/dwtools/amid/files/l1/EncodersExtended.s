@@ -262,10 +262,13 @@ _.FileWriteEncoders = _.FileWriteEncoders || Object.create( null );
 Object.assign( _.FileReadEncoders, FileReadEncoders );
 Object.assign( _.FileWriteEncoders, FileWriteEncoders );
 
-if( _.FileProvider && _.FileProvider.Partial && _.FileProvider.Partial.prototype.fileRead.encoders )
-_.assert( _.isPrototypeOf( _.FileReadEncoders, _.FileProvider.Partial.prototype.fileRead.encoders ) );
-if( _.FileProvider && _.FileProvider.Partial && _.FileProvider.Partial.prototype.fileWrite.encoders )
-_.assert( _.isPrototypeOf( _.FileWriteEncoders, _.FileProvider.Partial.prototype.fileWrite.encoders ) );
+// debugger;
+// if( _.FileProvider && _.FileProvider.Partial && _.FileProvider.Partial.prototype.fileRead.encoders )
+// _.assert( _.mapHasAll( _.FileProvider.Partial.prototype.fileRead.encoders, _.FileReadEncoders ) );
+// // _.assert( _.isPrototypeOf( _.FileReadEncoders, _.FileProvider.Partial.prototype.fileRead.encoders ) );
+// if( _.FileProvider && _.FileProvider.Partial && _.FileProvider.Partial.prototype.fileWrite.encoders )
+// _.assert( _.mapHasAll( _.FileProvider.Partial.prototype.fileWrite.encoders, _.FileWriteEncoders ) );
+// // _.assert( _.isPrototypeOf( _.FileWriteEncoders, _.FileProvider.Partial.prototype.fileWrite.encoders ) );
 
 // --
 // export
