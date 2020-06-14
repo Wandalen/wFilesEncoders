@@ -19,18 +19,19 @@ var Parent = wTester;
 function onSuiteBegin()
 {
   let context = this;
+  debugger;
   context.provider = _.FileProvider.HardDrive();
-  let path = context.provider.path;
-  context.testSuitePath = path.dirTempOpen( 'EncodersExtended' );
+  debugger;
+  context.testSuitePath = context.provider.path.pathDirTempOpen( 'EncodersExtended' );
 }
 
 //
 
 function onSuiteEnd()
 {
-  let path = this.provider.path;
-  _.assert( _.strHas( this.testSuitePath, 'tmp.tmp' ) );
-  path.dirTempClose( this.testSuitePath );
+  let context = this;
+  // _.assert( _.strHas( this.testSuitePath, 'tmp.tmp' ) );
+  context.provider.path.pathDirTempClose( this.testSuitePath );
   this.provider.finit();
 }
 
@@ -214,7 +215,7 @@ function readWriteBson( test )
 
 //
 
-function perfomance( test )
+function performance( test )
 {
   let self = this;
 
@@ -242,27 +243,27 @@ function perfomance( test )
 
   /* bson */
 
-  var timeNow = _.timeNow();
+  var timeNow = _.time.now();
   var serialized;
   for( var i = 0; i < times; i++ )
   {
     serialized = Bson.serialize( src );
   }
-  let bsonWriteTime = _.timeSpent( timeNow );
+  let bsonWriteTime = _.time.spent( timeNow );
   writeResults.push([ 'bson', bsonWriteTime, times ]);
 
-  var timeNow = _.timeNow();
+  var timeNow = _.time.now();
   var deserialized;
   for( var i = 0; i < times; i++ )
   {
     deserialized = Bson.deserialize( serialized );
   }
-  let bsonReadTime = _.timeSpent( timeNow );
+  let bsonReadTime = _.time.spent( timeNow );
   readResults.push([ 'bson', bsonReadTime, times  ]);
 
   /* cson */
 
-  var timeNow = _.timeNow();
+  var timeNow = _.time.now();
   var serialized;
   for( var i = 0; i < times; i++ )
   {
@@ -270,90 +271,90 @@ function perfomance( test )
     data = '(' + data + ')';
     serialized = Js2coffee( data );
   }
-  let csonWriteTime = _.timeSpent( timeNow );
+  let csonWriteTime = _.time.spent( timeNow );
   writeResults.push([ 'cson', csonWriteTime, times ]);
 
-  var timeNow = _.timeNow();
+  var timeNow = _.time.now();
   var deserialized;
   for( var i = 0; i < times; i++ )
   {
     deserialized = Coffee.eval( serialized )
   }
-  let csonReadTime = _.timeSpent( timeNow );
+  let csonReadTime = _.time.spent( timeNow );
   readResults.push([ 'cson', csonReadTime, times ]);
 
   /* Yaml */
 
-  var timeNow = _.timeNow();
+  var timeNow = _.time.now();
   var serialized;
   for( var i = 0; i < times; i++ )
   {
     serialized = Yaml.dump( src );
   }
-  let yamlWriteTime = _.timeSpent( timeNow );
+  let yamlWriteTime = _.time.spent( timeNow );
   writeResults.push([ 'yaml', yamlWriteTime, times  ]);
 
-  var timeNow = _.timeNow();
+  var timeNow = _.time.now();
   var deserialized;
   for( var i = 0; i < times; i++ )
   {
     deserialized = Yaml.load( serialized )
   }
-  let yamlReadTime = _.timeSpent( timeNow );
+  let yamlReadTime = _.time.spent( timeNow );
   readResults.push([ 'yaml', yamlReadTime, times  ]);
 
   /* json.fine */
 
-  var timeNow = _.timeNow();
+  var timeNow = _.time.now();
   var serialized;
   for( var i = 0; i < times; i++ )
   {
     serialized = _.cloneData({ src : src });
     serialized = _.toJson( serialized, { cloning : 0 } );
   }
-  let jsonFineWriteTime = _.timeSpent( timeNow );
+  let jsonFineWriteTime = _.time.spent( timeNow );
   writeResults.push([ 'json.fine', jsonFineWriteTime, times  ]);
 
   /* json */
 
-  var timeNow = _.timeNow();
+  var timeNow = _.time.now();
   var deserialized;
   for( var i = 0; i < times; i++ )
   {
     deserialized = _.jsonParse( serialized );
   }
-  let jsonReadTime = _.timeSpent( timeNow );
+  let jsonReadTime = _.time.spent( timeNow );
   readResults.push([ 'json', jsonReadTime, times  ]);
 
   /* json.min */
 
-  var timeNow = _.timeNow();
+  var timeNow = _.time.now();
   var serialized;
   for( var i = 0; i < times; i++ )
   {
     serialized = JSON.stringify( src );
   }
-  let jsonMinWriteTime = _.timeSpent( timeNow );
+  let jsonMinWriteTime = _.time.spent( timeNow );
   writeResults.push([ 'json.min', jsonMinWriteTime, times  ]);
 
   /* js.structure */
 
-  var timeNow = _.timeNow();
+  var timeNow = _.time.now();
   var serialized;
   for( var i = 0; i < times; i++ )
   {
     serialized = _.toJs( src );
   }
-  let jsStructureWriteTime = _.timeSpent( timeNow );
+  let jsStructureWriteTime = _.time.spent( timeNow );
   writeResults.push([ 'js.structure', jsStructureWriteTime, times  ]);
 
-  var timeNow = _.timeNow();
+  var timeNow = _.time.now();
   var deserialized;
   for( var i = 0; i < times; i++ )
   {
     deserialized = _.exec({ code : serialized, prependingReturn : 1 });
   }
-  let jsStructureReadTime = _.timeSpent( timeNow );
+  let jsStructureReadTime = _.time.spent( timeNow );
   readResults.push([ 'js.structure', jsStructureReadTime, times  ]);
 
   /* read results( deserialization ) */
@@ -380,8 +381,9 @@ function perfomance( test )
   var output = _.strTable( o );
   console.log( output );
 
-
 }
+
+performance.experimental = 1;
 
 // --
 // declare
@@ -408,7 +410,7 @@ var Self =
     readWriteCson,
     readWriteYaml,
     readWriteBson,
-    perfomance
+    performance
   },
 
 }

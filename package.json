@@ -1,36 +1,53 @@
 {
-  "name" : "wfilesencoders",
-  "version" : "0.3.188",
-  "engine" : "node >= 10.0.0",
-  "description" : "Collection of files transformers for Files module. Use it to read configs in different formats.",
-  "license" : "MIT",
-  "author" : "Kostiantyn Wandalen <wanalen@01.school>",
-  "contributors" :
-  [
-    { "name" : "Kostiantyn Wandalen", "email" : "wanalen@01.school" }
+  "name": "wfilesencoders",
+  "version": "0.3.188",
+  "engine": "node >= 10.0.0",
+  "description": "Collection of files transformers for Files module. Use it to read configs in different formats.",
+  "license": "MIT",
+  "author": "Kostiantyn Wandalen <wanalen@01.school>",
+  "contributors": [
+    {
+      "name": "Kostiantyn Wandalen",
+      "email": "wanalen@01.school"
+    }
   ],
-  "main" : "proto/dwtools/amid/l4_files/entry/EncodersExtended.s",
-  "files" : [ "proto/dwtools/amid/l4_files", "proto/dwtools/Tools.s", "out" ],
-  "scripts" : { "test" : "wtest .run 'proto/**' rapidity:-3", "docgen" : "wdocgen proto" },
-  "repository" :
-  {
-    "type" : "git",
-    "url" : "https://github.com/Wandalen/wFilesEncoders.git"
+  "main": "proto/dwtools/amid/l4_files/entry/EncodersExtended.s",
+  "files": [
+    "proto/dwtools/amid/l4_files",
+    "proto/dwtools/Tools.s",
+    "out"
+  ],
+  "scripts": {
+    "test": "wtest .run 'proto/**' rapidity:-3",
+    "docgen": "wdocgen proto"
   },
-  "bugs" :
-  {
-    "url" : "https://github.com/Wandalen/wFilesEncoders/issues"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Wandalen/wFilesEncoders.git"
   },
-  "dependencies" :
-  {
-    "wTools" : "alpha",
-    "wFiles" : "alpha",
-    "wgdf" : "alpha",
-    "coffeescript" : "2.5.1",
-    "js2coffee" : "2.2.0",
-    "js-yaml" : "3.14.0",
-    "bson" : "4.0.4"
+  "bugs": {
+    "url": "https://github.com/Wandalen/wFilesEncoders/issues"
   },
-  "devDependencies" : { "wTesting" : "alpha", "cli-table2" : "0.2.0" },
-  "keywords" : [ "wTools", "wFiles", "wFilesEncoders", "Files transformers", "file", "read file", "write file" ]
+  "dependencies": {
+    "wTools": "alpha",
+    "wFiles": "alpha",
+    "wgdf": "alpha",
+    "coffeescript": "2.5.1",
+    "js2coffee": "2.2.0",
+    "js-yaml": "3.14.0",
+    "bson": "4.0.4"
+  },
+  "devDependencies": {
+    "wTesting": "alpha",
+    "cli-table2": "0.2.0"
+  },
+  "keywords": [
+    "wTools",
+    "wFiles",
+    "wFilesEncoders",
+    "Files transformers",
+    "file",
+    "read file",
+    "write file"
+  ]
 }
