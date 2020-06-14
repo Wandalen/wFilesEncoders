@@ -2,27 +2,18 @@
 
 'use strict';
 
-/**
- * Collection of files transformers for Files module. Use it to read configs in different formats.
-  @module Tools/mid/files/FilesTransformers
-*/
-
-/**
- * @file files/EncodersExtended.s.
- */
-
-/* xxx : comment this file out */
+/* xxx : make auto-using GDF and comment this file out */
 
 if( typeof module === 'undefined' )
 return;
 
-if( typeof module !== 'undefined' )
-{
-
-  let _ = require( '../../../../dwtools/Tools.s' );
-  _.include( 'wFiles' );
-
-}
+// if( typeof module !== 'undefined' )
+// {
+//
+//   let _ = require( '../../../../dwtools/Tools.s' );
+//   _.include( 'wFiles' );
+//
+// }
 
 let _global = _global_;
 let _ = _global_.wTools;

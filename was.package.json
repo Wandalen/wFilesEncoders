@@ -1,7 +1,7 @@
 {
   "name" : "wfilesencoders",
   "version" : "0.3.187",
-  "engine" : "node >= 8.0.0",
+  "engine" : "node >= 10.0.0",
   "description" : "Collection of files transformers for Files module. Use it to read configs in different formats.",
   "license" : "MIT",
   "author" : "Kostiantyn Wandalen <wanalen@01.school>",
@@ -9,8 +9,8 @@
   [
     { "name" : "Kostiantyn Wandalen", "email" : "wanalen@01.school" }
   ],
-  "main" : "proto/dwtools/amid/files/l1/EncodersExtended.s",
-  "files" : [ "proto/dwtools/amid/files", "proto/dwtools/Tools.s", "out" ],
+  "main" : "proto/dwtools/amid/l4_files/entry/EncodersExtended.s",
+  "files" : [ "proto/dwtools/amid/l4_files", "proto/dwtools/Tools.s", "out" ],
   "scripts" : { "test" : "wtest .run 'proto/**' rapidity:-3", "docgen" : "wdocgen proto" },
   "repository" :
   {

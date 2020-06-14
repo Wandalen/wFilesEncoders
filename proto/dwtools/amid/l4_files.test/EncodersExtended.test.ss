@@ -4,13 +4,9 @@
 
 if( typeof module !== 'undefined' )
 {
-
   let _ = require( '../../Tools.s' );
-
-  require( '../files/l1/EncodersExtended.s' );
-
+  require( '../l4_files/entry/EncodersExtended.s' );
   _.include( 'wTesting' );
-
 }
 
 //
