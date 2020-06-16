@@ -31,6 +31,6 @@
     "js-yaml" : "",
     "bson" : ""
   },
-  "devDependencies" : { "wTesting" : "", "cli-table2" : "" },
+  "devDependencies" : { "wTesting" : "", "cli-table2" : "", "wfilesencoders" : "file:." },
   "keywords" : [ "wTools", "wFiles", "wFilesEncoders", "Files transformers", "file", "read file", "write file" ]
 }
