@@ -22,7 +22,7 @@ function onSuiteBegin()
   debugger;
   context.provider = _.FileProvider.HardDrive();
   debugger;
-  context.testSuitePath = context.provider.path.pathDirTempOpen( 'EncodersExtended' );
+  context.testSuitePath = context.provider.path.tempOpen( 'EncodersExtended' );
 }
 
 //
@@ -31,7 +31,7 @@ function onSuiteEnd()
 {
   let context = this;
   // _.assert( _.strHas( this.testSuitePath, 'tmp.tmp' ) );
-  context.provider.path.pathDirTempClose( this.testSuitePath );
+  context.provider.path.tempClose( this.testSuitePath );
   this.provider.finit();
 }
 
