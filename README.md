@@ -1,4 +1,4 @@
-# wFilesEncoders [![Build Status](https://travis-ci.org/Wandalen/wFilesEncoders.svg?branch=master)](https://travis-ci.org/Wandalen/wFilesEncoders)
+# module::FilesEncoders [![Status](https://github.com/Wandalen/wFilesEncoders/workflows/Test/badge.svg)](https://github.com/Wandalen/wFilesEncoders}/actions?query=workflow%3ATest)
 
 Collection of files transformers for Files module. Use it to read configs in different formats.
 
