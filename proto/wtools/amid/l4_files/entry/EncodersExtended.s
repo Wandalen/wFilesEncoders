@@ -9,7 +9,7 @@
 
 if( typeof module !== 'undefined' )
 {
-  let _ = require( '../../../../dwtools/Tools.s' );
+  let _ = require( '../../../../wtools/Tools.s' );
   require( '../include/EncodersExtended.s' )
   module[ 'exports' ] = _;
 }

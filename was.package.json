@@ -9,8 +9,8 @@
   [
     { "name" : "Kostiantyn Wandalen", "email" : "wanalen@01.school" }
   ],
-  "main" : "proto/dwtools/amid/l4_files/entry/EncodersExtended.s",
-  "files" : [ "proto/dwtools/amid/l4_files", "proto/dwtools/Tools.s", "out" ],
+  "main" : "proto/wtools/amid/l4_files/entry/EncodersExtended.s",
+  "files" : [ "proto/wtools/amid/l4_files", "proto/wtools/Tools.s", "out" ],
   "scripts" : { "test" : "wtest .run 'proto/**' rapidity:-3", "docgen" : "wdocgen proto" },
   "repository" :
   {
