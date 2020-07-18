@@ -366,7 +366,7 @@ function performance( test )
     colWidth : 15
   }
 
-  var output = _.strTable( o );
+  var output = _.strTable_old( o );
   console.log( output );
 
   /* write results( serialization ) */
@@ -378,7 +378,7 @@ function performance( test )
     colWidth : 15
   }
 
-  var output = _.strTable( o );
+  var output = _.strTable_old( o );
   console.log( output );
 
 }
