@@ -22,7 +22,7 @@ function onSuiteBegin()
   debugger;
   context.provider = _.FileProvider.HardDrive();
   debugger;
-  context.testSuitePath = context.provider.path.tempOpen( 'EncodersExtended' );
+  context.suiteTempPath = context.provider.path.tempOpen( 'EncodersExtended' );
 }
 
 //
@@ -30,8 +30,8 @@ function onSuiteBegin()
 function onSuiteEnd()
 {
   let context = this;
-  // _.assert( _.strHas( this.testSuitePath, 'tmp.tmp' ) );
-  context.provider.path.tempClose( this.testSuitePath );
+  // _.assert( _.strHas( this.suiteTempPath, 'tmp.tmp' ) );
+  context.provider.path.tempClose( this.suiteTempPath );
   this.provider.finit();
 }
 
@@ -40,7 +40,7 @@ function onSuiteEnd()
 function pathFor( filePath )
 {
   let path = this.provider.path;
-  filePath =  path.join( this.testSuitePath, filePath );
+  filePath =  path.join( this.suiteTempPath, filePath );
   return path.normalize( filePath );
 }
 
@@ -400,7 +400,7 @@ let Self =
 
   context :
   {
-    testSuitePath : null,
+    suiteTempPath : null,
     pathFor : pathFor,
     provider : null,
   },
