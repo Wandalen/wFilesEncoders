@@ -50,10 +50,10 @@ function pathFor( filePath )
 
 function readWriteCson( test )
 {
-  let self = this;
-  let provider = self.provider;
+  let context = this;
+  let provider = context.provider;
   let path = provider.path;
-  let testPath = self.pathFor( 'written/' + test.name );
+  let testPath = context.pathFor( 'written/' + test.name );
   let testFilePath = path.join( testPath, 'config.cson' );
 
   /**/
@@ -119,10 +119,10 @@ a1: 1
 
 function readWriteYaml( test )
 {
-  let self = this;
-  let provider = self.provider;
+  let context = this;
+  let provider = context.provider;
   let path = provider.path;
-  let testPath = self.pathFor( 'written/' + test.name );
+  let testPath = context.pathFor( 'written/' + test.name );
   let testFilePath = path.join( testPath, 'config.yml' );
 
   /**/
@@ -188,10 +188,10 @@ a1: 1
 
 function readWriteBson( test )
 {
-  let self = this;
-  let provider = self.provider;
+  let context = this;
+  let provider = context.provider;
   let path = provider.path;
-  let testPath = self.pathFor( 'written/' + test.name );
+  let testPath = context.pathFor( 'written/' + test.name );
   let testFilePath = path.join( testPath, 'config' );
 
   let src =
@@ -212,178 +212,6 @@ function readWriteBson( test )
   var got = provider.fileRead({ filePath : testFilePath, encoding : 'bson' });
   test.identical( got, src );
 }
-
-//
-
-function performance( test )
-{
-  let self = this;
-
-  let Yaml = require( 'js-yaml' );
-  let Bson = require( 'bson' );
-  let Coffee = require( 'coffeescript' );
-  let Js2coffee = require( 'js2coffee' );
-
-  let readResults = [];
-  let writeResults = [];
-  let times = 10000;
-
-  /**/
-
-  let src =
-  {
-    string: 'string',
-    number: 1.1234567,
-    bool: false,
-    array: [ 1, '1', true ],
-    date : new Date(),
-    map: { a: 'string', b: 1, c: false },
-  }
-
-
-  /* bson */
-
-  var timeNow = _.time.now();
-  var serialized;
-  for( var i = 0; i < times; i++ )
-  {
-    serialized = Bson.serialize( src );
-  }
-  let bsonWriteTime = _.time.spent( timeNow );
-  writeResults.push([ 'bson', bsonWriteTime, times ]);
-
-  var timeNow = _.time.now();
-  var deserialized;
-  for( var i = 0; i < times; i++ )
-  {
-    deserialized = Bson.deserialize( serialized );
-  }
-  let bsonReadTime = _.time.spent( timeNow );
-  readResults.push([ 'bson', bsonReadTime, times  ]);
-
-  /* cson */
-
-  var timeNow = _.time.now();
-  var serialized;
-  for( var i = 0; i < times; i++ )
-  {
-    let data = _.toStr( src, { jsLike : 1, keyWrapper : '' } );
-    data = '(' + data + ')';
-    serialized = Js2coffee( data );
-  }
-  let csonWriteTime = _.time.spent( timeNow );
-  writeResults.push([ 'cson', csonWriteTime, times ]);
-
-  var timeNow = _.time.now();
-  var deserialized;
-  for( var i = 0; i < times; i++ )
-  {
-    deserialized = Coffee.eval( serialized )
-  }
-  let csonReadTime = _.time.spent( timeNow );
-  readResults.push([ 'cson', csonReadTime, times ]);
-
-  /* Yaml */
-
-  var timeNow = _.time.now();
-  var serialized;
-  for( var i = 0; i < times; i++ )
-  {
-    serialized = Yaml.dump( src );
-  }
-  let yamlWriteTime = _.time.spent( timeNow );
-  writeResults.push([ 'yaml', yamlWriteTime, times  ]);
-
-  var timeNow = _.time.now();
-  var deserialized;
-  for( var i = 0; i < times; i++ )
-  {
-    deserialized = Yaml.load( serialized )
-  }
-  let yamlReadTime = _.time.spent( timeNow );
-  readResults.push([ 'yaml', yamlReadTime, times  ]);
-
-  /* json.fine */
-
-  var timeNow = _.time.now();
-  var serialized;
-  for( var i = 0; i < times; i++ )
-  {
-    serialized = _.cloneData({ src : src });
-    serialized = _.toJson( serialized, { cloning : 0 } );
-  }
-  let jsonFineWriteTime = _.time.spent( timeNow );
-  writeResults.push([ 'json.fine', jsonFineWriteTime, times  ]);
-
-  /* json */
-
-  var timeNow = _.time.now();
-  var deserialized;
-  for( var i = 0; i < times; i++ )
-  {
-    deserialized = _.jsonParse( serialized );
-  }
-  let jsonReadTime = _.time.spent( timeNow );
-  readResults.push([ 'json', jsonReadTime, times  ]);
-
-  /* json.min */
-
-  var timeNow = _.time.now();
-  var serialized;
-  for( var i = 0; i < times; i++ )
-  {
-    serialized = JSON.stringify( src );
-  }
-  let jsonMinWriteTime = _.time.spent( timeNow );
-  writeResults.push([ 'json.min', jsonMinWriteTime, times  ]);
-
-  /* js.structure */
-
-  var timeNow = _.time.now();
-  var serialized;
-  for( var i = 0; i < times; i++ )
-  {
-    serialized = _.toJs( src );
-  }
-  let jsStructureWriteTime = _.time.spent( timeNow );
-  writeResults.push([ 'js.structure', jsStructureWriteTime, times  ]);
-
-  var timeNow = _.time.now();
-  var deserialized;
-  for( var i = 0; i < times; i++ )
-  {
-    deserialized = _.exec({ code : serialized, prependingReturn : 1 });
-  }
-  let jsStructureReadTime = _.time.spent( timeNow );
-  readResults.push([ 'js.structure', jsStructureReadTime, times  ]);
-
-  /* read results( deserialization ) */
-
-  var o =
-  {
-    data : readResults,
-    head : [ 'read encoder', 'time', 'number of runs' ],
-    colWidth : 15
-  }
-
-  var output = _.strTable_old( o );
-  console.log( output );
-
-  /* write results( serialization ) */
-
-  var o =
-  {
-    data : writeResults,
-    head : [ 'write encoder', 'time', 'number of runs' ],
-    colWidth : 15
-  }
-
-  var output = _.strTable_old( o );
-  console.log( output );
-
-}
-
-performance.experimental = 1;
 
 // --
 // declare
@@ -410,7 +238,6 @@ let Self =
     readWriteCson,
     readWriteYaml,
     readWriteBson,
-    performance
   },
 
 }
