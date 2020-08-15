@@ -1,1 +1,36 @@
-{"name":"wfilesencoders","version":"0.3.207","engine":"node >= 10.0.0","description":"Collection of files transformers for Files module. Use it to read configs in different formats.","license":"MIT","author":"Kostiantyn Wandalen <wanalen@01.school>","contributors":[{"name":"Kostiantyn Wandalen","email":"wanalen@01.school"}],"main":"proto/wtools/amid/l4_files/entry/EncodersExtended.s","files":["proto/wtools/amid/l4_files","proto/wtools/Tools.s","out"],"scripts":{"test":"wtest .run 'proto/**' rapidity:-3","docgen":"wdocgen proto"},"repository":{"type":"git","url":"https://github.com/Wandalen/wFilesEncoders.git"},"bugs":{"url":"https://github.com/Wandalen/wFilesEncoders/issues"},"dependencies":{"wTools":"alpha","wFiles":"alpha","wgdf":"alpha","coffeescript":"2.5.1","js2coffee":"2.2.0","js-yaml":"3.14.0","bson":"4.1.0"},"devDependencies":{"wfilesencoders":"file:.","wTesting":"alpha","cli-table2":"0.2.0"},"keywords":["wTools","wFiles","wFilesEncoders","Files transformers","file","read file","write file"]}
+{
+  "name" : "wfilesencoders",
+  "version" : "0.3.208",
+  "engine" : "node >= 10.0.0",
+  "description" : "Collection of files transformers for Files module. Use it to read configs in different formats.",
+  "license" : "MIT",
+  "author" : "Kostiantyn Wandalen <wanalen@01.school>",
+  "contributors" :
+  [
+    { "name" : "Kostiantyn Wandalen", "email" : "wanalen@01.school" }
+  ],
+  "main" : "proto/wtools/amid/l4_files/entry/EncodersExtended.s",
+  "files" : [ "proto/wtools/amid/l4_files", "proto/wtools/Tools.s", "out" ],
+  "scripts" : { "test" : "wtest .run 'proto/**' rapidity:-3", "docgen" : "wdocgen proto" },
+  "repository" :
+  {
+    "type" : "git",
+    "url" : "https://github.com/Wandalen/wFilesEncoders.git"
+  },
+  "bugs" :
+  {
+    "url" : "https://github.com/Wandalen/wFilesEncoders/issues"
+  },
+  "dependencies" :
+  {
+    "wTools" : "alpha",
+    "wFiles" : "alpha",
+    "wgdf" : "alpha",
+    "coffeescript" : "2.5.1",
+    "js2coffee" : "2.2.0",
+    "js-yaml" : "3.14.0",
+    "bson" : "4.1.0"
+  },
+  "devDependencies" : { "wfilesencoders" : "file:.", "wTesting" : "alpha", "cli-table2" : "0.2.0" },
+  "keywords" : [ "wTools", "wFiles", "wFilesEncoders", "Files transformers", "file", "read file", "write file" ]
+}
