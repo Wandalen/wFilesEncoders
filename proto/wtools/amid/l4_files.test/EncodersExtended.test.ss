@@ -19,9 +19,7 @@ let Parent = wTester;
 function onSuiteBegin()
 {
   let context = this;
-  debugger;
   context.provider = _.FileProvider.HardDrive();
-  debugger;
   context.suiteTempPath = context.provider.path.tempOpen( 'EncodersExtended' );
 }
 
