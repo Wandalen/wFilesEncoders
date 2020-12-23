@@ -1,4 +1,5 @@
-( function _EncodersExtended_test_ss_( ) {
+( function _EncodersExtended_test_ss_( )
+{
 
 'use strict';
 
@@ -58,12 +59,12 @@ function readWriteCson( test )
 
   let src =
   {
-    string: 'string',
-    number: 1.123,
-    bool: false,
-    array: [ 1, '1', true ],
-    regexp: /\.string$/,
-    map: { a: 'string', b: 1, c: false },
+    string : 'string',
+    number : 1.123,
+    bool : false,
+    array : [ 1, '1', true ],
+    regexp : /\.string$/,
+    map : { a : 'string', b : 1, c : false },
   }
 
   let src2 = { a0 : { b0 : { c0 : { p : 1 }, c1 : 1 }, b1 : 1 }, a1 : 1 };
@@ -91,7 +92,7 @@ map:
   b: 1
   c: false
 `
-  test.identical( got,expected )
+  test.identical( got, expected )
 
   /**/
 
@@ -110,7 +111,7 @@ map:
   b1: 1
 a1: 1
 `
-  test.identical( got,expected )
+  test.identical( got, expected )
 }
 
 //
@@ -127,12 +128,12 @@ function readWriteYaml( test )
 
   let src =
   {
-    string: 'string',
-    number: 1.123,
-    bool: false,
-    array: [ 1, '1', true ],
-    regexp: /\.string$/,
-    map: { a: 'string', b: 1, c: false },
+    string : 'string',
+    number : 1.123,
+    bool : false,
+    array : [ 1, '1', true ],
+    regexp : /\.string$/,
+    map : { a : 'string', b : 1, c : false },
   }
 
   let src2 = { a0 : { b0 : { c0 : { p : 1 }, c1 : 1 }, b1 : 1 }, a1 : 1 };
@@ -159,7 +160,7 @@ map:
   b: 1
   c: false
 `
-  test.identical( got,expected )
+  test.identical( got, expected )
 
   /**/
 
@@ -178,7 +179,7 @@ map:
   b1: 1
 a1: 1
 `
-  test.identical( got,expected )
+  test.identical( got, expected )
 
 }
 
@@ -194,12 +195,12 @@ function readWriteBson( test )
 
   let src =
   {
-    string: 'string',
-    number: 1.123,
-    bool: false,
-    array: [ 1, '1', true ],
-    regexp: /\.string$/,
-    map: { a: 'string', b: 1, c: false },
+    string : 'string',
+    number : 1.123,
+    bool : false,
+    array : [ 1, '1', true ],
+    regexp : /\.string$/,
+    map : { a : 'string', b : 1, c : false },
   }
 
   /**/
@@ -221,13 +222,13 @@ let Self =
   name : 'Tools/mid/files/EncodersExtended',
   silencing : 1,
 
-  onSuiteBegin : onSuiteBegin,
-  onSuiteEnd : onSuiteEnd,
+  onSuiteBegin,
+  onSuiteEnd,
 
   context :
   {
     suiteTempPath : null,
-    pathFor : pathFor,
+    pathFor,
     provider : null,
   },
 

@@ -1,3 +1,3 @@
 
 var encoders = require( 'wfilesencoders' );
-console.log( 'Encoders', encoders );
+console.log( 'Encoders', encoders.knownModulesByName );
