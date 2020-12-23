@@ -1,4 +1,5 @@
-(function _EncodersExtended_s_() {
+(function _EncodersExtended_s_()
+{
 
 'use strict';
 
