@@ -2,15 +2,12 @@ format: outwillfile-2.0
 root:
   - wFilesEncoders.out
 consistency:
-  wFilesEncoders.out.will.yml: &ref_0
-    hash: a14258b7739e6d61e3c7ec42a59bdc18
-    size: 39799
-  ../.ex.will.yml: &ref_1
+  ../.ex.will.yml: &ref_0
     hash: 689a612a95273fec8b9247e321bf58dd
     size: 1868
-  ../.im.will.yml: &ref_2
-    hash: d8ced57b215f690549a2883b5a3d8821
-    size: 5382
+  ../.im.will.yml: &ref_1
+    hash: d91072bd74ace62d8a374f466edaa23c
+    size: 5490
 module:
   wFilesEncoders.out:
     about:
@@ -21,11 +18,11 @@ module:
         configs in different formats.
       enabled: 1
       version: 0.4.0
-      interpreters:
+      interpreters: &ref_2
         - njs >= 10.0.0
         - chrome >= 60.0.0
         - firefox >= 60.0.0
-      keywords:
+      keywords: &ref_3
         - wTools
         - wFiles
         - wFilesEncoders
@@ -35,10 +32,10 @@ module:
         - write file
       license: MIT
       author: Kostiantyn Wandalen <wanalen@01.school>
-      contributors:
+      contributors: &ref_4
         - Kostiantyn Wandalen <wanalen@01.school>
       npm.name: wfilesencoders
-      npm.scripts:
+      npm.scripts: &ref_5
         test: wtest .run proto/**
         docgen: wdocgen .build proto
     path:
@@ -218,6 +215,12 @@ module:
           development: 1
       wTesting:
         path: 'npm:///wTesting'
+        autoExporting: 0
+        enabled: 0
+        criterion:
+          development: 1
+      eslint:
+        path: 'npm:///eslint#7.1.0'
         autoExporting: 0
         enabled: 0
         criterion:
@@ -729,24 +732,6 @@ module:
           content: prime
         inherit:
           - files.transpile
-      exported.proto.export:
-        opts:
-          filePath: 'reflector::exported.proto.export'
-        criterion:
-          generated: 1
-          content: proto
-          export: 1
-        inherit:
-          - files.reflect
-      exported.files.proto.export:
-        opts:
-          filePath: 'reflector::exported.files.proto.export'
-        criterion:
-          generated: 1
-          content: proto
-          export: 1
-        inherit:
-          - files.reflect
     build:
       proto.export:
         steps:
@@ -835,9 +820,8 @@ module:
           content: proto
           export: 1
     consistency:
-      wFilesEncoders.out.will.yml: *ref_0
-      ../.ex.will.yml: *ref_1
-      ../.im.will.yml: *ref_2
+      ../.ex.will.yml: *ref_0
+      ../.im.will.yml: *ref_1
   ../:
     about:
       name: wFilesEncoders
@@ -847,26 +831,13 @@ module:
         configs in different formats.
       enabled: 1
       version: 0.4.0
-      interpreters:
-        - njs >= 10.0.0
-        - chrome >= 60.0.0
-        - firefox >= 60.0.0
-      keywords:
-        - wTools
-        - wFiles
-        - wFilesEncoders
-        - Files transformers
-        - file
-        - read file
-        - write file
+      interpreters: *ref_2
+      keywords: *ref_3
       license: MIT
       author: Kostiantyn Wandalen <wanalen@01.school>
-      contributors:
-        - Kostiantyn Wandalen <wanalen@01.school>
+      contributors: *ref_4
       npm.name: wfilesencoders
-      npm.scripts:
-        test: wtest .run proto/**
-        docgen: wdocgen .build proto
+      npm.scripts: *ref_5
     path:
       module.willfiles:
         criterion:
@@ -1012,6 +983,12 @@ module:
           development: 1
       wTesting:
         path: 'npm:///wTesting'
+        autoExporting: 0
+        enabled: 0
+        criterion:
+          development: 1
+      eslint:
+        path: 'npm:///eslint#7.1.0'
         autoExporting: 0
         enabled: 0
         criterion:
@@ -1551,6 +1528,5 @@ module:
         hash: 689a612a95273fec8b9247e321bf58dd
         size: 1868
       ../.im.will.yml:
-        hash: d8ced57b215f690549a2883b5a3d8821
-        size: 5382
-      wFilesEncoders.out.will.yml: *ref_0
+        hash: d91072bd74ace62d8a374f466edaa23c
+        size: 5490

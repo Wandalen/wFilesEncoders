@@ -1,6 +1,6 @@
 {
   "name" : "wfilesencoders",
-  "version" : "0.3.227",
+  "version" : "0.3.228",
   "engine" : "node >= 10.0.0",
   "description" : "Collection of files transformers for Files module. Use it to read configs in different formats.",
   "license" : "MIT",
@@ -31,6 +31,12 @@
     "js-yaml" : "3.14.1",
     "bson" : "4.2.2"
   },
-  "devDependencies" : { "wfilesencoders" : "file:.", "wTesting" : "alpha", "cli-table2" : "0.2.0" },
+  "devDependencies" :
+  {
+    "wfilesencoders" : "file:.",
+    "eslint" : "7.1.0",
+    "wTesting" : "alpha",
+    "cli-table2" : "0.2.0"
+  },
   "keywords" : [ "wTools", "wFiles", "wFilesEncoders", "Files transformers", "file", "read file", "write file" ]
 }
