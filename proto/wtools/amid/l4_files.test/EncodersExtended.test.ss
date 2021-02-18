@@ -39,7 +39,7 @@ function onSuiteEnd()
 function pathFor( filePath )
 {
   let path = this.provider.path;
-  filePath =  path.join( this.suiteTempPath, filePath );
+  filePath = path.join( this.suiteTempPath, filePath );
   return path.normalize( filePath );
 }
 
