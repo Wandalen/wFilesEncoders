@@ -5,14 +5,14 @@
 
 if( typeof module !== 'undefined' )
 {
-  let _ = require( '../../Tools.s' );
+  const _ = require( '../../Tools.s' );
   require( '../l4_files/entry/EncodersExtended.s' );
   _.include( 'wTesting' );
 }
 
 //
 
-let _ = _global_.wTools;
+const _ = _global_.wTools;
 let Parent = wTester;
 
 //
@@ -216,7 +216,7 @@ function readWriteBson( test )
 // declare
 // --
 
-let Self =
+const Proto =
 {
 
   name : 'Tools/mid/files/EncodersExtended',
@@ -243,7 +243,7 @@ let Self =
 
 //
 
-Self = wTestSuite( Self )
+const Self = wTestSuite( Proto )
 if( typeof module !== 'undefined' && !module.parent )
 wTester.test( Self.name );
 
