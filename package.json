@@ -1,6 +1,6 @@
 {
   "name": "wfilesencoders",
-  "version": "0.3.253",
+  "version": "0.3.254",
   "engine": "node >= 10.0.0",
   "description": "Collection of files transformers for Files module. Use it to read configs in different formats.",
   "license": "MIT",
@@ -29,9 +29,9 @@
     "url": "https://github.com/Wandalen/wFilesEncoders/issues"
   },
   "dependencies": {
-    "wTools": "gamma",
-    "wFiles": "gamma",
-    "wgdf": "gamma",
+    "wTools": "delta",
+    "wFiles": "delta",
+    "wgdf": "delta",
     "coffeescript": "2.5.1",
     "js2coffee": "2.2.0",
     "js-yaml": "4.0.0",
@@ -40,7 +40,7 @@
   "devDependencies": {
     "cli-table2": "0.2.0",
     "eslint": "7.1.0",
-    "wTesting": "gamma",
+    "wTesting": "delta",
     "wfilesencoders": "file:."
   },
   "keywords": [
