@@ -1,6 +1,6 @@
 {
   "name": "wfilesencoders",
-  "version": "0.3.256",
+  "version": "0.3.257",
   "engine": "node >= 10.0.0",
   "description": "Collection of files transformers for Files module. Use it to read configs in different formats.",
   "license": "MIT",
@@ -15,7 +15,8 @@
   "files": [
     "proto/wtools/amid/l4_files",
     "proto/wtools/Tools.s",
-    "out"
+    "out",
+    "proto/node_modules"
   ],
   "scripts": {
     "test": "wtest .run 'proto/**' rapidity:-3",
@@ -40,8 +41,7 @@
   "devDependencies": {
     "cli-table2": "0.2.0",
     "eslint": "7.1.0",
-    "wTesting": "delta",
-    "wfilesencoders": "file:."
+    "wTesting": "delta"
   },
   "keywords": [
     "wTools",
