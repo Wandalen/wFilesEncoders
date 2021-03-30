@@ -10,7 +10,7 @@
     { "name" : "Kostiantyn Wandalen", "email" : "wanalen@01.school" }
   ],
   "main" : "proto/wtools/amid/l4_files/entry/EncodersExtended.s",
-  "files" : [ "proto/wtools/amid/l4_files", "proto/wtools/Tools.s", "out" ],
+  "files" : [ "proto/wtools/amid/l4_files", "proto/wtools/Tools.s", "out", "proto/node_modules" ],
   "scripts" : { "test" : "wtest .run 'proto/**' rapidity:-3", "docgen" : "wdocgen proto" },
   "repository" :
   {
@@ -31,12 +31,6 @@
     "js-yaml" : "",
     "bson" : ""
   },
-  "devDependencies" :
-  {
-    "wTesting" : "",
-    "cli-table2" : "",
-    "wfilesencoders" : "file:.",
-    "eslint" : "7.1.0"
-  },
+  "devDependencies" : { "wTesting" : "", "cli-table2" : "", "eslint" : "7.1.0" },
   "keywords" : [ "wTools", "wFiles", "wFilesEncoders", "Files transformers", "file", "read file", "write file" ]
 }
