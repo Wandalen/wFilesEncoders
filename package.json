@@ -1,55 +1,36 @@
 {
-  "name": "wfilesencoders",
-  "version": "0.3.258",
-  "engine": "node >= 10.0.0",
-  "description": "Collection of files transformers for Files module. Use it to read configs in different formats.",
-  "license": "MIT",
-  "author": "Kostiantyn Wandalen <wanalen@01.school>",
-  "contributors": [
-    {
-      "name": "Kostiantyn Wandalen",
-      "email": "wanalen@01.school"
-    }
+  "name" : "wfilesencoders",
+  "version" : "0.3.259",
+  "engine" : "node >= 10.0.0",
+  "description" : "Collection of files transformers for Files module. Use it to read configs in different formats.",
+  "license" : "MIT",
+  "author" : "Kostiantyn Wandalen <wanalen@01.school>",
+  "contributors" :
+  [
+    { "name" : "Kostiantyn Wandalen", "email" : "wanalen@01.school" }
   ],
-  "main": "proto/wtools/amid/l4_files/entry/EncodersExtended.s",
-  "files": [
-    "proto/wtools/amid/l4_files",
-    "proto/wtools/Tools.s",
-    "out",
-    "proto/node_modules"
-  ],
-  "scripts": {
-    "test": "wtest .run 'proto/**' rapidity:-3",
-    "docgen": "wdocgen proto"
+  "main" : "/pro/module/wFilesEncoders/proto/node_modules/wfilesencoders",
+  "files" : [ "proto/wtools/amid/l4_files", "proto/wtools/Tools.s", "out", "proto/node_modules" ],
+  "scripts" : { "test" : "wtest .run 'proto/**' rapidity:-3", "docgen" : "wdocgen proto" },
+  "repository" :
+  {
+    "type" : "git",
+    "url" : "https://github.com/Wandalen/wFilesEncoders.git"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/Wandalen/wFilesEncoders.git"
+  "bugs" :
+  {
+    "url" : "https://github.com/Wandalen/wFilesEncoders/issues"
   },
-  "bugs": {
-    "url": "https://github.com/Wandalen/wFilesEncoders/issues"
+  "dependencies" :
+  {
+    "wTools" : "delta",
+    "wFiles" : "delta",
+    "wgdf" : "delta",
+    "coffeescript" : "2.5.1",
+    "js2coffee" : "2.2.0",
+    "js-yaml" : "4.0.0",
+    "bson" : "4.2.3"
   },
-  "dependencies": {
-    "wTools": "delta",
-    "wFiles": "delta",
-    "wgdf": "delta",
-    "coffeescript": "2.5.1",
-    "js2coffee": "2.2.0",
-    "js-yaml": "4.0.0",
-    "bson": "4.2.3"
-  },
-  "devDependencies": {
-    "cli-table2": "0.2.0",
-    "eslint": "7.1.0",
-    "wTesting": "delta"
-  },
-  "keywords": [
-    "wTools",
-    "wFiles",
-    "wFilesEncoders",
-    "Files transformers",
-    "file",
-    "read file",
-    "write file"
-  ]
+  "devDependencies" : { "eslint" : "7.1.0", "wTesting" : "delta", "cli-table2" : "0.2.0" },
+  "keywords" : [ "wTools", "wFiles", "wFilesEncoders", "Files transformers", "file", "read file", "write file" ]
 }
