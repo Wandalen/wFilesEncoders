@@ -95,9 +95,8 @@ path:
       raw: compiled
       content: prime
   npm.proto.entry:
-    - >-
-      /pro/module/wFilesEncoders/proto/wtools/amid/l4_files/entry/EncodersExtended.s
-    - /pro/module/wFilesEncoders/proto/node_modules/wfilesencoders
+    - proto/wtools/amid/l4_files/entry/EncodersExtended.s
+    - proto/node_modules/wfilesencoders
 reflector:
   reflect.proto:
     inherit: predefined.*
