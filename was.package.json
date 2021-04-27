@@ -1,6 +1,6 @@
 {
   "name" : "wfilesencoders",
-  "version" : "0.3.271",
+  "version" : "0.3.272",
   "engine" : "node >= 10.0.0",
   "description" : "Collection of files transformers for Files module. Use it to read configs in different formats.",
   "license" : "MIT",
