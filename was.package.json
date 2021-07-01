@@ -1,36 +1,56 @@
 {
-  "name" : "wfilesencoders",
-  "version" : "0.3.280",
-  "engine" : "node >= 10.0.0",
-  "description" : "Collection of files transformers for Files module. Use it to read configs in different formats.",
-  "license" : "MIT",
-  "author" : "Kostiantyn Wandalen <wanalen@01.school>",
-  "contributors" :
-  [
-    { "name" : "Kostiantyn Wandalen", "email" : "wanalen@01.school" }
+  "name": "wfilesencoders",
+  "version": "0.3.281",
+  "engine": "node >= 10.0.0",
+  "description": "Collection of files transformers for Files module. Use it to read configs in different formats.",
+  "license": "MIT",
+  "author": "Kostiantyn Wandalen <wanalen@01.school>",
+  "contributors": [
+    {
+      "name": "Kostiantyn Wandalen",
+      "email": "wanalen@01.school"
+    }
   ],
-  "main" : "proto/node_modules/wfilesencoders",
-  "files" : [ "proto/wtools/amid/l4_files", "out", "proto/node_modules", "proto/node_modules/Tools", "proto/node_modules/wfilesencoders" ],
-  "scripts" : { "test" : "wtest .run 'proto/**' rapidity:-3", "docgen" : "wdocgen proto" },
-  "repository" :
-  {
-    "type" : "git",
-    "url" : "https://github.com/Wandalen/wFilesEncoders.git"
+  "main": "proto/node_modules/wfilesencoders",
+  "files": [
+    "proto/wtools/amid/l4_files",
+    "out",
+    "proto/node_modules",
+    "proto/node_modules/Tools",
+    "proto/node_modules/wfilesencoders"
+  ],
+  "scripts": {
+    "test": "wtest .run 'proto/**' rapidity:-3",
+    "docgen": "wdocgen proto"
   },
-  "bugs" :
-  {
-    "url" : "https://github.com/Wandalen/wFilesEncoders/issues"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Wandalen/wFilesEncoders.git"
   },
-  "dependencies" :
-  {
-    "wTools" : "",
-    "wFiles" : "",
-    "wgdf" : "",
-    "coffeescript" : "",
-    "js2coffee" : "",
-    "js-yaml" : "",
-    "bson" : ""
+  "bugs": {
+    "url": "https://github.com/Wandalen/wFilesEncoders/issues"
   },
-  "devDependencies" : { "wTesting" : "", "cli-table2" : "", "eslint" : "7.1.0" },
-  "keywords" : [ "wTools", "wFiles", "wFilesEncoders", "Files transformers", "file", "read file", "write file" ]
+  "dependencies": {
+    "wTools": "",
+    "wgdf": "",
+    "wFiles": "",
+    "js2coffee": "",
+    "js-yaml": "",
+    "coffeescript": "",
+    "bson": ""
+  },
+  "devDependencies": {
+    "wTesting": "",
+    "eslint": "7.1.0",
+    "cli-table2": ""
+  },
+  "keywords": [
+    "wTools",
+    "wFiles",
+    "wFilesEncoders",
+    "Files transformers",
+    "file",
+    "read file",
+    "write file"
+  ]
 }
