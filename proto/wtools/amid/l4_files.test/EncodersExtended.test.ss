@@ -30,7 +30,6 @@ function onSuiteBegin()
 function onSuiteEnd()
 {
   let context = this;
-  // _.assert( _.strHas( this.suiteTempPath, 'tmp.tmp' ) );
   context.provider.path.tempClose( this.suiteTempPath );
   this.provider.finit();
 }
@@ -211,6 +210,34 @@ function readWriteBson( test )
   provider.fileWrite({ filePath : testFilePath, data : src, encoding : 'bson' });
   var got = provider.fileRead({ filePath : testFilePath, encoding : 'bson' });
   test.identical( got, src );
+
+}
+
+//
+
+function writeJsStructureExported( test )
+{
+  let a = test.assetFor( false );
+
+  test.case = 'encoder';
+
+  test.true( !!_.files.WriteEncoders[ 'js.structure.exported' ] );
+
+  test.case = 'basic';
+  a.reflect();
+  var data = { str : 'str1', int : 13 }
+  debugger;
+  _.fileProvider.fileWrite
+  ({
+    filePath : a.abs( 'config.js' ),
+    data,
+    encoding : 'js.structure.exported',
+  });
+
+  var read = _.fileProvider.fileRead( a.abs( 'config.js' ) );
+  var exp = `module.exports = { "str" : \`str1\`, "int" : 13 }`
+  console.log( read );
+
 }
 
 // --
@@ -228,8 +255,8 @@ const Proto =
 
   context :
   {
-    suiteTempPath : null,
     pathFor,
+    suiteTempPath : null,
     provider : null,
   },
 
@@ -238,6 +265,7 @@ const Proto =
     readWriteCson,
     readWriteYaml,
     readWriteBson,
+    writeJsStructureExported,
   },
 
 }
