@@ -226,7 +226,6 @@ function writeJsStructureExported( test )
   test.case = 'basic';
   a.reflect();
   var data = { str : 'str1', int : 13 }
-  debugger;
   _.fileProvider.fileWrite
   ({
     filePath : a.abs( 'config.js' ),
