@@ -1,6 +1,6 @@
 {
   "name": "wfilesencoders",
-  "version": "0.3.296",
+  "version": "0.3.297",
   "engine": "node >= 10.0.0",
   "description": "Collection of files transformers for Files module. Use it to read configs in different formats.",
   "license": "MIT",
@@ -37,7 +37,7 @@
     "js2coffee": "2.2.0",
     "js-yaml": "4.1.0",
     "coffeescript": "2.5.1",
-    "bson": "4.4.1"
+    "bson": "4.5.1"
   },
   "devDependencies": {
     "wTesting": "delta",
