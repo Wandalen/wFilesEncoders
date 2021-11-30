@@ -3,8 +3,8 @@ root:
   - wFilesEncoders.out
 consistency:
   ../will.yml: &ref_0
-    hash: 860e5f94a5a7f09f28c6f5901cd9f174
-    size: 6860
+    hash: e2a52dab09b775ce17015146f08e785b
+    size: 6868
 module:
   wFilesEncoders.out:
     about:
@@ -1507,5 +1507,5 @@ module:
           - 'build::npm'
     consistency:
       ../will.yml:
-        hash: 860e5f94a5a7f09f28c6f5901cd9f174
-        size: 6860
+        hash: e2a52dab09b775ce17015146f08e785b
+        size: 6868
